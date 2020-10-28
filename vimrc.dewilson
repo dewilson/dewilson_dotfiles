@@ -1,0 +1,9 @@
+" Because who needs vi?
+set nocompatible
+
+let mapleader = ","
+
+nmap ; :
+noremap ;; ;
+
+"TODO(dewilson): rebuild what was lost :'(
