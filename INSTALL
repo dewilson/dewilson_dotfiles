@@ -3,6 +3,16 @@
 # Fail on error.
 set -e -x
 
-ln -s ~/dewilson_dotfiles/vimrc.dewilson ~/.vimrc
+ln -s ~/dewilson_dotfiles/vimrc.dewilson ~/.vimrc && \
+ln -s ~/dewilson_dotfiles/gitignore.dewilson ~/.gitignore || \
+(echo "
+Failed to install. If you're confident about it, you can erase those
+pre-existing files with these commands:
+rm ~/.vimrc
+rm ~/.gitignore
+" && exit 1)
+
+# Set up global gitintore file
+git config --global core.excludesfile ~/.gitignore
 
 # TODO(dewilson) lot of work to do here
